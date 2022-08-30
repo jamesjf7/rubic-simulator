@@ -1,3 +1,33 @@
-<div>
-  <h1>Rubic Simulator</h1>
+<div
+  class="bg-black text-white"
+  (keyup)="handleKeyUpEvent($event)"
+  (keydown)="handleKeyDownEvent($event)"
+>
+  <div
+    class="w-screen h-screen grid justify-center items-center content-center align-middle gap-10"
+  >
+    <app-timer [time]="time"></app-timer>
+
+    <!-- scramble -->
+    <span class="text-center font-bold">{{ scramble }}</span>
+
+    <scramble-display
+      visualization="3D"
+      checkered
+      scramble="F' D F2 L2 U' R2 U' F2 D2 R2 F2 U2 F R' B F D' B2 U B'"
+    ></scramble-display>
+
+    <app-history [histories]="histories"></app-history>
+  </div>
 </div>
+
+<script>
+  import { ScrambleDisplay } from "scramble-display";
+
+  import Scramby from "scramby";
+
+  const scrambler = Scramby();
+
+  console.log(scrambler.getRandomScramble().scrambleString);
+  alert();
+</script>

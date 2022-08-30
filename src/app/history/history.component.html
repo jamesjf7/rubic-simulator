@@ -1,0 +1,18 @@
+<div className="grid justify-center items-center content-center">
+  <table class="table-auto border text-center w-full">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Session</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let history of histories; let index = index">
+        <td>{{ index }}</td>
+        <td>{{ history.scramble }}</td>
+        <td>{{ history.time }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
